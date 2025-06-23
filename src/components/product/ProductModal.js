@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import {  useState } from "react";
 import PropTypes from "prop-types";
 import { EffectFade, Thumbs } from 'swiper';
 import { Modal } from "react-bootstrap";
@@ -9,6 +9,7 @@ import { getProductCartQuantity } from "../../helpers/product";
 import { addToCart } from "../../store/slices/cart-slice";
 import { addToWishlist } from "../../store/slices/wishlist-slice";
 import { addToCompare } from "../../store/slices/compare-slice";
+import ProductDetailsTable from './ProductDetailsTable';
 
 function ProductModal({ product, currency, discountedPrice, finalProductPrice, finalDiscountedPrice, show, onHide, wishlistItem, compareItem }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -44,17 +45,7 @@ function ProductModal({ product, currency, discountedPrice, finalProductPrice, f
     modules: [EffectFade, Thumbs],
   };
 
-  const thumbnailSwiperParams = {
-    onSwiper: setThumbsSwiper,
-    spaceBetween: 10,
-    slidesPerView: 4,
-    touchRatio: 0.2,
-    freeMode: true,
-    loop: true,
-    slideToClickedSlide: true,
-    navigation: true
-  };
-
+ 
   const onCloseModal = () => {
     setThumbsSwiper(null)
     onHide()
@@ -85,41 +76,11 @@ function ProductModal({ product, currency, discountedPrice, finalProductPrice, f
                 })}
             </Swiper>
           </div>
-          <div className="product-small-image-wrapper mt-15">
-            <Swiper options={thumbnailSwiperParams}>
-              {product.image &&
-                product.image.map((img, i) => {
-                  return (
-                    <SwiperSlide key={i}>
-                      <div className="single-image">
-                        <img
-                          src={process.env.PUBLIC_URL + img}
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                    </SwiperSlide>
-                  );
-                })}
-            </Swiper>
-          </div>
         </div>
         <div className="col-md-7 col-sm-12 col-xs-12">
           <div className="product-details-content quickview-content">
-            <h2>{product.name}</h2>
+            <h2>{product.category[0]} - {product.tag[0]} <br/> <br/> {product.name}</h2>
             <div className="product-details-price">
-              {discountedPrice !== null ? (
-                <Fragment>
-                  <span>
-                    {currency.currencySymbol + finalDiscountedPrice}
-                  </span>{" "}
-                  <span className="old">
-                    {currency.currencySymbol + finalProductPrice}
-                  </span>
-                </Fragment>
-              ) : (
-                <span>{currency.currencySymbol + finalProductPrice} </span>
-              )}
             </div>
             {product.rating && product.rating > 0 ? (
               <div className="pro-details-rating-wrap">
@@ -130,9 +91,11 @@ function ProductModal({ product, currency, discountedPrice, finalProductPrice, f
             ) : (
               ""
             )}
-            <div className="pro-details-list">
-              <p>{product.shortDescription}</p>
-            </div>
+            
+          
+<div className="pro-details-list">
+  <ProductDetailsTable description={product.shortDescription} />
+</div>
 
             {product.variation ? (
               <div className="pro-details-size-color">
