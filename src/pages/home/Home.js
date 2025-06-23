@@ -146,89 +146,96 @@ const HomeFurnitureSix = () => {
 
 
 
-  <section className="slider-home5" style={{ paddingBottom: "70px" }} >
-    <div className="container">
-      <div
-        className="swiper tf-sw-mobile"
-        data-screen={767}
-        data-preview={1}
-        data-space={15}
-      >
-        <div className="swiper-wrapper grid-cls-v2">
-          <div className="swiper-slide item1">
-            <div className="collection-position style-2">
-              <a href="product-detail.html" className="img-style ">
-                <img
-                  className="lazyload effect-paralax"
-                  data-src="assets/img/banner/ext-clading.jpg"
-                  src="./assets/img/banner/ext-clading.jpg"
-                  alt="banner-cls"
-                />
-              </a>
-              <div className="content cls-content">
-                <div className="cls-heading">
-                  <h3 className="text_white">Exterior Cladding </h3>
-                  <p className="text_white">Lorem Ipsum is simply dummy text of the printing <br/> and typesetting industry.</p>
-                </div>
-                <a href="/"
-                  className="btn-line btn-line-white"
-                >
-                  <span>Discover More</span>
-                </a>
-              </div>
+      <section className="slider-home5" style={{ paddingBottom: "70px" }}>
+  <div className="container">
+    <div className="row">
+      {/* Item 1 */}
+      <div className="col-md-6 mb-4">
+        <div className="collection-position style-2 h-100">
+          <a href="product-detail.html" className="img-style d-block">
+            <img
+              className="effect-paralax img-fluid"
+              src="assets/img/banner/ext-clading.jpg"
+              alt="Exterior Cladding"
+            />
+          </a>
+          <div className="content cls-content">
+            <div className="cls-heading">
+              <h3 className="text_white">Exterior Cladding</h3>
+              <p className="text_white">
+                Lorem Ipsum is simply dummy text of the printing <br />
+                and typesetting industry.
+              </p>
             </div>
-          </div>
-          <div className="swiper-slide item2">
-            <div className="collection-position style-2 spacing-1 ">
-              <a href="product-detail.html" className="img-style ">
-                <img
-                  className="lazyload effect-paralax"
-                  data-src="assets/img/banner/1mm.png"
-                  src="assets/img/banner/1mm.png"
-                  alt="banner-cls"
-                />
-              </a>
-              <div className="content cls-content">
-                <div className="cls-heading">
-                  <h4 className="text_white">1 mm+ Laminates Design Master </h4>
-                  <p className="text_white">Lorem Ipsum is simply dummy text of the printing <br/> and typesetting industry.</p>
-                </div>
-                <a href="/"
-                  className="btn-line btn-line-white"
-                >
-                  <span>Discover More</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="swiper-slide item3">
-            <div className="collection-position style-2 spacing-1 ">
-              <a href="product-detail.html" className="img-style ">
-                <img
-                  className="lazyload effect-paralax"
-                  data-src="assets/img/banner/soffito.png"
-                  src="assets/img/banner/soffito.png"
-                  alt="banner-cls"
-                />
-              </a>
-              <div className="content cls-content">
-                <div className="cls-heading">
-                  <h4 className="text_white">Soffitto Panels</h4>
-                  <p className="text_white">Lorem Ipsum is simply dummy text of the printing <br/> and typesetting industry.</p>
-                </div>
-                <a href="/"
-                  className="btn-line btn-line-white"
-                >
-                  <span>Discover More</span>
-                </a>
-              </div>
-            </div>
+            <a href="/" className="btn-line btn-line-white">
+              <span>Discover More</span>
+            </a>
           </div>
         </div>
-        <div className="sw-pagination-mb sw-dots type-circle justify-content-center d-md-none d-flex" />
       </div>
+
+    <div className="col-md-6 ">
+      <div className="row">
+
+      <div className="col-md-12 mb-4">
+        <div className="collection-position style-2 spacing-1 h-100">
+          <a href="product-detail.html" className="img-style d-block">
+            <img
+              className="effect-paralax img-fluid"
+              src="assets/img/banner/1mm.png"
+              alt="1 mm+ Laminates"
+            />
+          </a>
+          <div className="content cls-content">
+            <div className="cls-heading">
+              <h4 className="text_white">1 mm+ Laminates Design Master</h4>
+              <p className="text_white">
+                Lorem Ipsum is simply dummy text of the printing <br />
+                and typesetting industry.
+              </p>
+            </div>
+            <a href="/" className="btn-line btn-line-white">
+              <span>Discover More</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Item 3 */}
+      <div className="col-md-12 mb-4">
+        <div className="collection-position style-2 spacing-1 h-100">
+          <a href="product-detail.html" className="img-style d-block">
+            <img
+              className="effect-paralax img-fluid"
+              src="assets/img/banner/soffito.png"
+              alt="Soffitto Panels"
+            />
+          </a>
+          <div className="content cls-content">
+            <div className="cls-heading">
+              <h4 className="text_white">Soffitto Panels</h4>
+              <p className="text_white">
+                Lorem Ipsum is simply dummy text of the printing <br />
+                and typesetting industry.
+              </p>
+            </div>
+            <a href="/" className="btn-line btn-line-white">
+              <span>Discover More</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+
     </div>
-  </section>
+
+
+    </div>
+  </div>
+</section>
+
 
 
 
