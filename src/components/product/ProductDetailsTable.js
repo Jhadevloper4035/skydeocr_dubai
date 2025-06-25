@@ -4,7 +4,7 @@ import React from 'react';
 const parseProductDetails = (description) => {
   const decoded = new DOMParser().parseFromString(description, 'text/html').documentElement.textContent;
 
-  const fields = decoded.split(/(?<=\))\s*|(?=Product|Sheet Size|Sheet Thickness|Thickness Tolerance|Finish)/g).filter(Boolean);
+  const fields = decoded.split(/(?<=\))\s*|(?=Product| Sheet Standard Thickness | Standard Size|Sheet Size|Thickness|Sheet Thickness|Thickness Tolerance|Finish)/g).filter(Boolean);
 
   return fields.map((entry) => {
     const [key, ...valParts] = entry.split(':');

@@ -3929,3 +3929,21 @@
   width: 180px;
   white-space: nowrap;
 }
+
+
+.product-wrap-10 .product-img .product-action-2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+  
+}
+
+.product-wrap-10--style2--blue .product-img .product-action-2 button, .product-wrap-10--style2--blue .product-img .product-action-2 a {
+  
+    margin: 0px 5px;
+}

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { Fragment, useState } from "react";
+import React, {  useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getProductCartQuantity } from "../../helpers/product";
@@ -7,6 +7,7 @@ import Rating from "./sub-components/ProductRating";
 import { addToCart } from "../../store/slices/cart-slice";
 import { addToWishlist } from "../../store/slices/wishlist-slice";
 import { addToCompare } from "../../store/slices/compare-slice";
+import ProductDetailsTable from "./ProductDetailsTable";
 
 const ProductDescriptionInfo = ({
   product,
@@ -39,19 +40,9 @@ const ProductDescriptionInfo = ({
 
   return (
     <div className="product-details-content ml-70">
-      <h2>{product.name}</h2>
-      <div className="product-details-price">
-        {discountedPrice !== null ? (
-          <Fragment>
-            <span>{currency.currencySymbol + finalDiscountedPrice}</span>{" "}
-            <span className="old">
-              {currency.currencySymbol + finalProductPrice}
-            </span>
-          </Fragment>
-        ) : (
-          <span>{currency.currencySymbol + finalProductPrice} </span>
-        )}
-      </div>
+      <h2>{product.category[0]} - {product.tag[0]} <br/> <br/> {product.name}  </h2>
+      <br/>
+     
       {product.rating && product.rating > 0 ? (
         <div className="pro-details-rating-wrap">
           <div className="pro-details-rating">
@@ -61,9 +52,11 @@ const ProductDescriptionInfo = ({
       ) : (
         ""
       )}
-      <div className="pro-details-list">
-        <p>{product.shortDescription}</p>
-      </div>
+
+      
+     <div className="pro-details-list">
+  <ProductDetailsTable description={product.shortDescription} />
+</div>
 
       {product.variation ? (
         <div className="pro-details-size-color">

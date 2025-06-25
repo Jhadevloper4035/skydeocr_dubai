@@ -82,6 +82,7 @@ function ProductModal({ product, currency, discountedPrice, finalProductPrice, f
             <h2>{product.category[0]} - {product.tag[0]} <br/> <br/> {product.name}</h2>
             <div className="product-details-price">
             </div>
+
             {product.rating && product.rating > 0 ? (
               <div className="pro-details-rating-wrap">
                 <div className="pro-details-rating">
@@ -94,7 +95,7 @@ function ProductModal({ product, currency, discountedPrice, finalProductPrice, f
             
           
 <div className="pro-details-list">
-  <ProductDetailsTable description={product.shortDescription} />
+  <ProductDetailsTable description={product.fullDescription} />
 </div>
 
             {product.variation ? (
