@@ -2,36 +2,24 @@ import PropTypes from "prop-types";
 
 import { setActiveSort } from "../../helpers/product";
 
-const ShopColor = ({ colors, getSortParams }) => {
+const ShopTag = ({ tags, getSortParams }) => {
   return (
     <div className="sidebar-widget mt-50">
-      <h4 className="pro-sidebar-title">Color </h4>
+      <h4 className="pro-sidebar-title"> All subcategories </h4>
       <div className="sidebar-widget-list mt-20">
-        {colors ? (
+        {tags ? (
           <ul>
-            <li>
-              <div className="sidebar-widget-list-left">
-                <button
-                  onClick={e => {
-                    getSortParams("color", "");
-                    setActiveSort(e);
-                  }}
-                >
-                  <span className="checkmark" /> All Colors{" "}
-                </button>
-              </div>
-            </li>
-            {colors.map((color, key) => {
+            {tags.map((tag, key) => {
               return (
                 <li key={key}>
                   <div className="sidebar-widget-list-left">
                     <button
                       onClick={e => {
-                        getSortParams("color", color);
+                        getSortParams("tag", tag);
                         setActiveSort(e);
                       }}
                     >
-                      <span className="checkmark" /> {color}{" "}
+                      <span className="checkmark" /> {tag}
                     </button>
                   </div>
                 </li>
@@ -46,9 +34,9 @@ const ShopColor = ({ colors, getSortParams }) => {
   );
 };
 
-ShopColor.propTypes = {
-  colors: PropTypes.array,
-  getSortParams: PropTypes.func
+ShopTag.propTypes = {
+  getSortParams: PropTypes.func,
+  tags: PropTypes.array
 };
 
-export default ShopColor;
+export default ShopTag;

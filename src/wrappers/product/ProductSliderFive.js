@@ -7,6 +7,12 @@ import ProductGridSingleEleven from "../../components/product/ProductGridSingleE
 
 const settings = {
   loop: true,
+  arrow:true,
+  dots:true,
+   autoplay: {
+    delay: 1000,
+    disableOnInteraction: false
+  },
   slidesPerView: 1,
   grabCursor: true,
   spaceBetween: 30,
@@ -37,7 +43,7 @@ const ProductSliderFive = ({
   const { cartItems } = useSelector((state) => state.cart);
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { compareItems } = useSelector((state) => state.compare);
-  const prods = getProducts(products, category, type, 6)
+  const prods = getProducts(products, category, type, 12)
 
   if(!prods?.length) return <p>No Products Found</p>
 

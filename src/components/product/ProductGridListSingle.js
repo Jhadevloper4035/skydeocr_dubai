@@ -120,7 +120,7 @@ const ProductGridListSingle = ({
           <div className="product-content text-center">
             <h3>
               <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
-               {product.category[0]} - {product.tag[0]} <br/> <br/> {product.name}
+               {product.category[0]} - {product.tag[0]}  {product.name}
               </Link>
             </h3>
             {product.rating && product.rating > 0 ? (

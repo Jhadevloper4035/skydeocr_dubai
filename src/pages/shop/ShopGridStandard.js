@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from 'react';
 import Paginator from 'react-hooks-paginator';
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 import { getSortedProducts } from '../../helpers/product';
 import SEO from "../../components/seo";
 import LayoutOne from '../../layouts/LayoutOne';
@@ -20,9 +20,16 @@ const ShopGridStandard = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [currentData, setCurrentData] = useState([]);
     const [sortedProducts, setSortedProducts] = useState([]);
-    const { products } = useSelector((state) => state.product);
 
-    const pageLimit = 15;
+       
+    const {category} = useParams();
+
+    const  products  = useSelector((state) => state.product.products.filter(
+        (product) => product.category[0] === category
+    ));
+
+
+    const pageLimit = 100;
     let { pathname } = useLocation();
 
     const getLayout = (layout) => {

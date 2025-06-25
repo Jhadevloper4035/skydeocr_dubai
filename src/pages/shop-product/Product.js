@@ -5,7 +5,6 @@ import SEO from "../../components/seo";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 import RelatedProductSlider from "../../wrappers/product/RelatedProductSlider";
-import ProductDescriptionTab from "../../wrappers/product/ProductDescriptionTab";
 import ProductImageDescription from "../../wrappers/product/ProductImageDescription";
 
 const Product = () => {
@@ -31,24 +30,21 @@ const Product = () => {
           ]} 
         />
 
-        {/* product description with image */}
+       
         <ProductImageDescription
           spaceTopClass="pt-100"
           spaceBottomClass="pb-100"
           product={product}
         />
 
-        {/* product description tab */}
-        <ProductDescriptionTab
-          spaceBottomClass="pb-90"
-          productFullDesc={product.fullDescription}
-        />
-
-        {/* related product slider */}
+    
         <RelatedProductSlider
           spaceBottomClass="pb-95"
           category={product.category[0]}
         />
+
+
+        
       </LayoutOne>
     </Fragment>
   );

@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from "react";
-import Paginator from "react-hooks-paginator"; 
+import Paginator from "react-hooks-paginator";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { getSortedProducts } from "../../helpers/product";
 import SEO from "../../components/seo";
 import LayoutOne from "../../layouts/LayoutOne";
@@ -19,12 +19,18 @@ const ShopGridNoSidebar = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentData, setCurrentData] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
-  const { products } = useSelector((state) => state.product);
 
-  const pageLimit = 15;
+  const { tag } = useParams();
+
+  const products = useSelector((state) =>
+    state.product.products.filter((product) => product.tag[0] === tag)
+  );
+
+
+  const pageLimit = 100;
   let { pathname } = useLocation();
 
-  const getLayout = layout => {
+  const getLayout = (layout) => {
     setLayout(layout);
   };
 
@@ -54,11 +60,11 @@ const ShopGridNoSidebar = () => {
 
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
-        <Breadcrumb 
+        <Breadcrumb
           pages={[
-            {label: "Home", path: process.env.PUBLIC_URL + "/" },
-            {label: "Shop", path: process.env.PUBLIC_URL + pathname }
-          ]} 
+            { label: "Home", path: process.env.PUBLIC_URL + "/" },
+            { label: "Shop", path: process.env.PUBLIC_URL + pathname },
+          ]}
         />
 
         <div className="shop-area pt-95 pb-100">

@@ -13,13 +13,8 @@ const Home = lazy(() => import("./pages/home/Home"));
 // shop pages
 const ShopGridStandard = lazy(() => import("./pages/shop/ShopGridStandard"));
 const ShopGridFilter = lazy(() => import("./pages/shop/ShopGridFilter"));
-const ShopGridTwoColumn = lazy(() => import("./pages/shop/ShopGridTwoColumn"));
 const ShopGridNoSidebar = lazy(() => import("./pages/shop/ShopGridNoSidebar"));
-const ShopGridFullWidth = lazy(() => import("./pages/shop/ShopGridFullWidth"));
-const ShopGridRightSidebar = lazy(() => import("./pages/shop/ShopGridRightSidebar"));
-const ShopListStandard = lazy(() => import("./pages/shop/ShopListStandard"));
-const ShopListFullWidth = lazy(() => import("./pages/shop/ShopListFullWidth"));
-const ShopListTwoColumn = lazy(() => import("./pages/shop/ShopListTwoColumn"));
+
 
 
 // product pages
@@ -67,42 +62,20 @@ const App = () => {
             <Route path={process.env.PUBLIC_URL + "/"}  element={<Home/>} />
 
             <Route
-              path={process.env.PUBLIC_URL + "/shop-grid-standard"}
+              path={process.env.PUBLIC_URL + "/shop-grid-standard/:category"}
               element={<ShopGridStandard />}
             />
             <Route
-              path={process.env.PUBLIC_URL + "/shop-grid-filter"}
+              path={process.env.PUBLIC_URL + "/shop-grid-filter/:tag"}
               element={<ShopGridFilter />}
             />
+      
             <Route
-              path={process.env.PUBLIC_URL + "/shop-grid-two-column"}
-              element={<ShopGridTwoColumn />}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/shop-grid-no-sidebar"}
+              path={process.env.PUBLIC_URL + "/shop-grid-no-sidebar/:tag"}
               element={<ShopGridNoSidebar />}
             />
-            <Route
-              path={process.env.PUBLIC_URL + "/shop-grid-full-width"}
-              element={<ShopGridFullWidth />}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/shop-grid-right-sidebar"}
-              element={<ShopGridRightSidebar />}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/shop-list-standard"}
-              element={<ShopListStandard />}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/shop-list-full-width"}
-              element={<ShopListFullWidth />}
-            />
-            <Route
-              path={process.env.PUBLIC_URL + "/shop-list-two-column"}
-              element={<ShopListTwoColumn />}
-            />
-
+        
+          
             {/* Shop product pages */}
             <Route
               path={process.env.PUBLIC_URL + "/product/:id"}
