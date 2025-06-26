@@ -62,7 +62,7 @@ const App = () => {
             <Route path={process.env.PUBLIC_URL + "/"}  element={<Home/>} />
 
             <Route
-              path={process.env.PUBLIC_URL + "/shop-grid-standard/:category"}
+              path={process.env.PUBLIC_URL + "/product/:category"}
               element={<ShopGridStandard />}
             />
             <Route
